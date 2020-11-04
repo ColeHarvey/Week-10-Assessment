@@ -1,0 +1,25 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>View All Voters</title>
+</head>
+<body>
+<form>
+<table>
+<tr th:each="currentVoter : ${voters}">
+<td th:text="${currentVoter.id}"/>
+<td th:text="${currentVoter.name}"/>
+<td th:text="${currentVoter.phone}"/>
+<td th:text="${currentVoter.politicalparty}"/>
+<td th:text="${currentVoter.address.street}"/>
+<td th:text="${currentVoter.address.city}"/>
+<td th:text="${currentVoter.address.state}"/>
+<td><a th:href="@{/edit/{id}(id=${currentVoter.id})}">Edit</a></td>
+<td><a
+th:href="@{/delete/{id} (id=${currentVoter.id})}">Delete</a></td>
+</tr>
+</table>
+</form>
+<a href="../inputVoter">Add a new Voter</a>
+</body>
+</html>
