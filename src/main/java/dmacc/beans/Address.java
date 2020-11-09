@@ -2,15 +2,17 @@ package dmacc.beans;
 
 import javax.persistence.Embeddable;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@Data
 @Embeddable
 public class Address {
 	private String street;
 	private String city;
 	private String state;
 	
-	public Address() {
-		super();
-	}
 	
 	public Address(String street, String city, String state) {
 		this.street = street;
@@ -18,6 +20,12 @@ public class Address {
 		this.state = state;
 	}
 
+	/*
+	 
+	public Address() {
+		super();
+	}
+	
 	public String getStreet() {
 		return street;
 	}
@@ -46,4 +54,5 @@ public class Address {
 	public String toString() {
 		return "Address [street=" + street + ", city=" + city + ", state=" + state + "]";
 	}
+	*/
 }

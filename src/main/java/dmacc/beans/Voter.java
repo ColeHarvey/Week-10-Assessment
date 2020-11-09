@@ -7,6 +7,11 @@ import javax.persistence.Id;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@Data
 @Entity
 public class Voter {
 	@Id
@@ -18,10 +23,7 @@ public class Voter {
 	@Autowired
 	private Address address;
 	
-	public Voter( ) {
-		super();
-		this.politicalparty = "Democrat";
-	}
+
 	
 	public Voter(String name) {
 		this.name = name;
@@ -39,7 +41,8 @@ public class Voter {
 		this.phone = phone;
 		this.politicalparty = party;
 	}
-
+	
+	/*
 	public long getId() {
 		return id;
 	}
@@ -86,7 +89,7 @@ public class Voter {
 				+ ", address=" + address + "]";
 	}
 	
-	
+	*/
 	
 
 }
